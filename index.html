@@ -8,8 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ counter }}</h1>
-        <button onclick="vue.increment()">+</button>
+        <h1>{{ fullName }}</h1>
     </div>
 
     <script src="vue.js"></script>
@@ -18,12 +17,13 @@
             el: '#app',
 
             data: {
-                counter: 0
+                firstName: 'Taufan',
+                lastName: 'Prasetyo'
             },
 
-            methods: {
-                increment() {
-                    this.counter++
+            computed: {
+                fullName() {
+                    return this.firstName + ' ' + this.lastName;
                 }
             }
         });
