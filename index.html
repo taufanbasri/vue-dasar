@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ fullName }}</h1>
+        <h1>{{ message | upper }}</h1>
     </div>
 
     <script src="vue.js"></script>
@@ -17,13 +17,12 @@
             el: '#app',
 
             data: {
-                firstName: 'Taufan',
-                lastName: 'Prasetyo'
+                message: 'Hello World'
             },
 
-            computed: {
-                fullName() {
-                    return this.firstName + ' ' + this.lastName;
+            filters: {
+                upper(text) {
+                    return text.toUpperCase();
                 }
             }
         });
