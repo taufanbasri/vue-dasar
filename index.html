@@ -8,7 +8,9 @@
 </head>
 <body>
     <div id="app">
-        <h1>Filters: {{ price | formatCurrency('IDR') }}</h1>
+        <h1>Upper: {{ message | upper }}</h1>
+        <h1>Reverse: {{ message | reverse }}</h1>
+        <h1>Upper & Reverse: {{ message | upper | reverse }}</h1>
     </div>
 
     <script src="vue.js"></script>
@@ -17,18 +19,16 @@
             el: '#app',
 
             data: {
-                price: 500000
+                message: 'Hello World'
             },
 
             filters: {
-                formatCurrency(value, currency) {
-                    var formatter = new Intl.NumberFormat('id-ID', {
-                        style: 'currency',
-                        currency: currency,
-                        minimumFractionDigits: 0
-                    }).format(value);
-
-                    return formatter;
+                upper(text) {
+                    return text.toUpperCase();
+                },
+                
+                reverse(text) {
+                    return text.split('').reverse().join('')
                 }
             }
         });
