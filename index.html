@@ -8,7 +8,14 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ message | upper }}</h1>
+        <!-- filters -->
+        <h1>Filters: {{ message | upper }}</h1>
+
+        <!-- methods -->
+        <h1>Methods: {{ upper(message) }}</h1>
+
+        <!-- computed -->
+        <h1>Computed: {{ messageUpperCase }}</h1>
     </div>
 
     <script src="vue.js"></script>
@@ -23,6 +30,18 @@
             filters: {
                 upper(text) {
                     return text.toUpperCase();
+                }
+            },
+
+            methods: {
+                upper(text) {
+                    return text.toUpperCase();
+                }
+            },
+
+            computed: {
+                messageUpperCase(text) {
+                    return this.message.toUpperCase();
                 }
             }
         });
