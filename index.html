@@ -7,6 +7,18 @@
     <title>Dasar-dasar Vue</title>
 </head>
 <body>
-    
+    <div id="app">
+        <h1>{{ message }}</h1>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello World'
+            }
+        })
+    </script>
 </body>
 </html>
