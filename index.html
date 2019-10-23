@@ -15,10 +15,49 @@
     <script>
         var vue = new Vue({
             el: '#app',
+
             data: {
                 message: 'Hello World'
+            },
+
+            beforeCreate() {
+                console.log('before create: message = ' + this.message);
+            },
+
+            created() {
+                console.log('created: message = ' + this.message);
+            },
+
+            beforeMount() {
+                console.log('before mount: el = ' + this.$el.textContent);
+            },
+
+            mounted() {
+                console.log('mounted: el = ' + this.$el.textContent);
+            },
+
+            beforeUpdate() {
+                console.log('before update: el = ' + this.$el.textContent);
+            },
+
+            updated() {
+                console.log('updated: el = ' + this.$el.textContent);
+            },
+
+            beforeDestroy() {
+                console.log('before destroy');
+            },
+
+            destroyed() {
+                console.log('destroyed');
             }
         })
+
+        // untuk mengetes hook update
+        vue.message = 'Selamat Datang'
+
+        // test destroyed
+        vue.$destroy()
     </script>
 </body>
 </html>
