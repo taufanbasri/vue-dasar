@@ -8,14 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <!-- filters -->
-        <h1>Filters: {{ message | upper }}</h1>
-
-        <!-- methods -->
-        <h1>Methods: {{ upper(message) }}</h1>
-
-        <!-- computed -->
-        <h1>Computed: {{ messageUpperCase }}</h1>
+        <h1>Filters: {{ price | formatCurrency('IDR') }}</h1>
     </div>
 
     <script src="vue.js"></script>
@@ -24,24 +17,18 @@
             el: '#app',
 
             data: {
-                message: 'Hello World'
+                price: 500000
             },
 
             filters: {
-                upper(text) {
-                    return text.toUpperCase();
-                }
-            },
+                formatCurrency(value, currency) {
+                    var formatter = new Intl.NumberFormat('id-ID', {
+                        style: 'currency',
+                        currency: currency,
+                        minimumFractionDigits: 0
+                    }).format(value);
 
-            methods: {
-                upper(text) {
-                    return text.toUpperCase();
-                }
-            },
-
-            computed: {
-                messageUpperCase(text) {
-                    return this.message.toUpperCase();
+                    return formatter;
                 }
             }
         });
