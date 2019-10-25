@@ -8,9 +8,16 @@
 </head>
 <body>
     <div id="app">
-        <h1>Upper: {{ message | upper }}</h1>
-        <h1>Reverse: {{ message | reverse }}</h1>
-        <h1>Upper & Reverse: {{ message | upper | reverse }}</h1>
+        <ul>
+            <li v-for="book in books">{{ book }}</li>
+        </ul>
+
+        <!-- with template and index -->
+        <ul>
+            <template v-for="(book, index) in books">
+                <li>{{ index+1 }} . {{ book }}</li>
+            </template>
+        </ul>
     </div>
 
     <script src="vue.js"></script>
@@ -19,18 +26,12 @@
             el: '#app',
 
             data: {
-                message: 'Hello World'
+                books : [
+                    'C++ High Performance', 
+                    'Mastering Linux Security and Hardening', 'Python Programming Blueprints', 
+                    'Mastering PostgreSQL 10'
+                ]
             },
-
-            filters: {
-                upper(text) {
-                    return text.toUpperCase();
-                },
-                
-                reverse(text) {
-                    return text.split('').reverse().join('')
-                }
-            }
         });
     </script>
 </body>
