@@ -9,13 +9,13 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="book in books">{{ book }}</li>
+            <li v-for="value of book">{{ value }}</li>
         </ul>
 
-        <!-- with template and index -->
+        <!-- with template and key -->
         <ul>
-            <template v-for="(book, index) in books">
-                <li>{{ index+1 }} . {{ book }}</li>
+            <template v-for="(value, key) in book">
+                <li>{{ key }} : {{ value }}</li>
             </template>
         </ul>
     </div>
@@ -26,11 +26,14 @@
             el: '#app',
 
             data: {
-                books : [
-                    'C++ High Performance', 
-                    'Mastering Linux Security and Hardening', 'Python Programming Blueprints', 
-                    'Mastering PostgreSQL 10'
-                ]
+                book: {
+                    id: 99,
+                    title: 'C++ High Performance',
+                    description: 'Write code that scales across CPU registers, multi-core, and machine clusters',
+                    authors: 'Viktor Sehr, Björn Andrist',
+                    publish_year: 2018,
+                    price: 100000,
+                }
             },
         });
     </script>
