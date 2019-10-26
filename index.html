@@ -23,13 +23,9 @@
 </head>
 <body>
     <div id="app">
-        <h1>Selected: {{ selectedBook }}</h1>
-        <book 
-            v-for="book in books" 
-            :key="book.id" 
-            :book="book"
-            @selected="selectedBook = $event">
-        </book>
+        <information>
+            <p>Hati-hati lantai licin!</p>
+        </information>
     </div>
 
     <script src="vue.js"></script>
