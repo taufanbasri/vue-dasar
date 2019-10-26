@@ -7,41 +7,26 @@
     <title>Dasar-dasar Vue</title>
     
     <style>
-        form {
-            border: 1px solid #ddd;
-            padding:5px;
-            width:225px;
+        .card {
             background: #efefef;
+            border:1px solid #ddd;
+            margin-right:5px;
+            padding:5px;
+            width: 200px;
+            float:left;
         }
-        label{
-            display: block;
-            margin-top: 5px;
-        }
-        
-        input, textarea, select, option {
-            min-width: 200px;
+
+        h3 {
+            min-height: 45px;
         }
     </style>
 </head>
 <body>
     <div id="app">
-        <hello-world></hello-world>
+        <book v-for="book in books" :key="book.id" :book="book"></book>
     </div>
 
     <script src="vue.js"></script>
-    <script>
-        Vue.component('hello-world', {
-            data() {
-                return {
-                    message: 'Hello World'
-                }
-            },
-            template: '<h1>{{ message }}</h1>'
-        })
-        
-        var vue = new Vue({
-            el: '#app',
-        });    
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
