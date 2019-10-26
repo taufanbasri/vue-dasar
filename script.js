@@ -3,7 +3,7 @@ Vue.component('information', {
         <div class="card">
             <strong>Informasi</strong>
             <hr>
-            <slot></slot>
+            <slot>Tanpa informasi</slot>
         </div>
     `
 })
