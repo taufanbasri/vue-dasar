@@ -11,6 +11,8 @@ var BookComponent = {
                     <div :class="classCard">
                         <h3>{{ book.title }}</h3>
                         <p v-html="book.description"></p>
+
+                        <button @click="$emit('selected', book.title)">Select</button>
                     </div>
                 `
 }
@@ -56,6 +58,7 @@ var vue = new Vue({
                 publish_year: 2017,
                 price: 75000,
             },
-        ]
+        ],
+        selectedBook: ''
     }
 });
