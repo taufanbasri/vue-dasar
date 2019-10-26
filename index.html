@@ -23,7 +23,15 @@
 </head>
 <body>
     <div id="app">
-        <information></information>
+        <information>
+            <template v-slot:judul>
+                <h1>Info Penting!</h1>
+            </template>
+
+            <template v-slot:isi>
+                <p>Waspada, banyak curanmor!</p>
+            </template>
+        </information>
     </div>
 
     <script src="vue.js"></script>

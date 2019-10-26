@@ -1,9 +1,9 @@
 Vue.component('information', {
     template: `
         <div class="card">
-            <strong>Informasi</strong>
+            <slot name="judul"></slot>
             <hr>
-            <slot>Tanpa informasi</slot>
+            <slot name="isi">Tanpa informasi</slot>
         </div>
     `
 })
