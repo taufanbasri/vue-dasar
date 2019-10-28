@@ -23,8 +23,12 @@
 </head>
 <body>
     <div id="app">
-        <h1>Selected: {{ selectedBook }}</h1>
-        <book v-for="book in books" :key="book.id" :book="book" @selected="selectedBook = $event"></book>
+        <button @click="currentComponent = 'list'">List</button>
+        <button @click="currentComponent = 'detail'">Detail</button>
+
+        <hr>
+
+        <component :is="currentComponent"></component>
     </div>
 
     <script src="vue.js"></script>
