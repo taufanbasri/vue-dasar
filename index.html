@@ -23,14 +23,11 @@
 </head>
 <body>
     <div id="app">
-        <alert>
-            <template v-slot:defaultJudul="slotData">
-                <h1>{{ slotData.defaultAlert }}</h1>
-            </template>
-        </alert>
+        <h1>Selected: {{ selectedBook }}</h1>
+        <book v-for="book in books" :key="book.id" :book="book" @selected="selectedBook = $event"></book>
     </div>
 
     <script src="vue.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
