@@ -23,15 +23,11 @@
 </head>
 <body>
     <div id="app">
-        <information>
-            <template v-slot:judul>
-                <h1>Info Penting!</h1>
+        <alert>
+            <template v-slot:defaultJudul="slotData">
+                <h1>{{ slotData.defaultAlert }}</h1>
             </template>
-
-            <template v-slot:isi>
-                <p>Waspada, banyak curanmor!</p>
-            </template>
-        </information>
+        </alert>
     </div>
 
     <script src="vue.js"></script>

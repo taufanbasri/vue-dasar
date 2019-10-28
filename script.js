@@ -1,9 +1,13 @@
-Vue.component('information', {
+Vue.component('alert', {
+    data() {
+        return {
+            defaultAlert: 'Awas Bahaya'
+        }
+    },
+
     template: `
         <div class="card">
-            <slot name="judul"></slot>
-            <hr>
-            <slot name="isi">Tanpa informasi</slot>
+            <slot :defaultJudul="defaultAlert">{{ defaultAlert }}</slot>
         </div>
     `
 })
